@@ -123,7 +123,7 @@ export class List extends Component {
                     className="name"
                     value={workout.name}
                     onClick={() => this.loadWorkout(workout.name)}
-                    href="#"
+                    href=""
                   >
                     <h4>{workout.name}</h4>
                   </a>
