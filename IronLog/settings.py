@@ -92,7 +92,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'ironlog',
+            'NAME': 'ironlogdb',
             'USER': 'arya',
             'PASSWORD': 'postgresiron',
             'HOST': 'localhost',
