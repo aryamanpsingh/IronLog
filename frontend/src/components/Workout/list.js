@@ -118,14 +118,15 @@ export class List extends Component {
             {this.props.workout.map((workout, idx) => (
               <tr key={idx}>
                 <td key={workout.name}>
-                  <button
+                  <a
                     name={workout.name}
                     className="name"
                     value={workout.name}
                     onClick={() => this.loadWorkout(workout.name)}
+                    href="/"
                   >
                     <h4>{workout.name}</h4>
-                  </button>
+                  </a>
                 </td>
               </tr>
             ))}
