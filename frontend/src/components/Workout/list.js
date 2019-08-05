@@ -107,10 +107,8 @@ export class List extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Name</th>
-              <th>ID</th>
-              <th>Name</th>
+              <th>Date created</th>
               <th />
             </tr>
           </thead>
@@ -125,6 +123,14 @@ export class List extends Component {
                   onClick={() => this.loadWorkout(workout.name)}
                 >
                   <h4>{workout.name}</h4>
+                </td>
+                <td
+                  key={workout.date_created}
+                  name={workout.date_created}
+                  className="date-created"
+                  value={workout.date_created}
+                >
+                  <h4>{workout.date_created}</h4>
                 </td>
               </tr>
             ))}
