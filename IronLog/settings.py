@@ -94,7 +94,7 @@ else:
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'ironlog',
             'USER': 'arya',
-            'PASSWORD': 'ironlog786',
+            'PASSWORD': 'postgresiron',
             'HOST': 'localhost',
             'PORT': '',
         }
