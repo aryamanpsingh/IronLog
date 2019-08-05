@@ -38,25 +38,17 @@ export default function Index() {
           <div className="row">
             <div className="col-md-8 mx-auto">
               <p>
-                The HTML5 video element uses an mp4 video as a source. Change
-                the source video to add in your own background! The header text
-                is vertically centered using flex utilities that are build into
-                Bootstrap 4.
+                Lifting weights is fun, keeping track of the weights you lift
+                isn’t. IronLog was conceptualized as a non-intrusive workout
+                tracker which allowis you to record your gym progression with
+                minimal mental effort.
               </p>
               <p>
-                The overlay color can be changed by changing the{" "}
-                <code>background-color</code> of the <code>.overlay</code>{" "}
-                className in the CSS.
+                This tool doesn’t look to inundate users with fancy features, it
+                aims to provide notebook style convenience without actually
+                needing one.
               </p>
-              <p>
-                Set the mobile fallback image in the CSS by changing the
-                background image of the header element within the media query at
-                the bottom of the CSS snippet.
-              </p>
-              <p className="mb-0">
-                Created by{" "}
-                <a href="https://startbootstrap.com">Start Bootstrap</a>
-              </p>
+              <p className="mb-0" />
             </div>
           </div>
         </div>
