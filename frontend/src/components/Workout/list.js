@@ -125,12 +125,12 @@ export class List extends Component {
                   <h4>{workout.name}</h4>
                 </td>
                 <td
-                  key={workout.date_created}
-                  name={workout.date_created}
+                  key={workout.created_at}
+                  name={workout.created_at}
                   className="date-created"
-                  value={workout.date_created}
+                  value={workout.created_at}
                 >
-                  <h4>{workout.date_created}</h4>
+                  <h4>{workout.created_at}</h4>
                 </td>
               </tr>
             ))}
