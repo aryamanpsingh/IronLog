@@ -37,7 +37,7 @@ export class LoginForm extends Component {
       <div className="col-md-6 m-auto">
         <div className="card card-body mt-5">
           <img
-            src="/static/frontend/images/SVG/logo.svg"
+            src="/static/frontend/images/logo.png"
             className="img-thumbnail rounded mx-auto d-block"
           />
           <h2 className="text-center">Login</h2>
