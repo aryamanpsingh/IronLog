@@ -61,7 +61,7 @@ export class Header extends Component {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a className="navbar-brand" href="#">
               <img
-                src="/static/frontend/images/SVG/logo.svg"
+                src="/static/frontend/images/logo.png"
                 class="img-fluid"
                 alt="logo"
               />

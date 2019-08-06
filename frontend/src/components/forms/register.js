@@ -43,6 +43,10 @@ export class RegisterUser extends Component {
     return (
       <div className="col-md-6 m-auto">
         <div className="card card-body mt-4 mb-4">
+          <img
+            src="/static/frontend/images/logo.png"
+            className="img-thumbnail rounded mx-auto d-block"
+          />
           <h2>Add User</h2>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
