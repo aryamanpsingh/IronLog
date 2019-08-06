@@ -36,6 +36,10 @@ export class LoginForm extends Component {
     return (
       <div className="col-md-6 m-auto">
         <div className="card card-body mt-5">
+          <img
+            src="/static/frontend/images/SVG/logo.svg.png"
+            className="img-thumbnail rounded mx-auto d-block"
+          />
           <h2 className="text-center">Login</h2>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
