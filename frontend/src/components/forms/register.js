@@ -47,7 +47,7 @@ export class RegisterUser extends Component {
             src="/static/frontend/images/logo.png"
             className="img-thumbnail rounded mx-auto d-block"
           />
-          <h2>Add User</h2>
+          <h2 className="text-center">Add User</h2>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label>Username</label>

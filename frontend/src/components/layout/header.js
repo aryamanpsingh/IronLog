@@ -60,11 +60,7 @@ export class Header extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a className="navbar-brand" href="#">
-              <img
-                src="/static/frontend/images/logo.png"
-                class="img-fluid"
-                alt="logo"
-              />
+              <img src="/static/frontend/images/logo.png" alt="logo" />
             </a>
           </div>
           {isAuthenticated ? authLinks : guestLinks}
