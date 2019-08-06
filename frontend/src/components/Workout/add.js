@@ -3,6 +3,8 @@ import { addWorkout } from "../../actions/workout";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import Header from "../layout/header";
+
 class Add extends Component {
   state = {
     name: "",
@@ -62,83 +64,87 @@ class Add extends Component {
   render() {
     let { name, exercise } = this.state;
     return (
-      <div className="col-md-6 m-auto">
-        <div className="card card-body mt-4 mb-4">
-          <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
-            <div className="form-group">
-              <label htmlFor="workout">Workout Name</label>
-              <input
-                type="text"
-                name="name"
-                id="workout"
-                onChange={this.handleChange}
-                value={name}
-                className="form-control"
-              />
-            </div>
-            <button onClick={this.addExercise} className="btn btn-primary">
-              +
-            </button>
-            {exercise.map((val, idx) => {
-              let exerciseId = `exercise-${idx}`,
-                setsId = `sets-${idx}`,
-                repsId = `reps-${idx}`,
-                weightsId = `weights-${idx}`;
-              return (
-                <div key={idx} className="card">
-                  <div className="form-group">
-                    <label htmlFor={exerciseId}>{`Exercise #${idx + 1}`}</label>
-                    <input
-                      type="text"
-                      name={exerciseId}
-                      data-id={idx}
-                      id={exerciseId}
-                      className="name"
-                      value={exercise[idx].name}
-                    />
+      <Fragment>
+        <Header />
+        <div className="col-md-6 m-auto">
+          <div className="card card-body mt-4 mb-4">
+            <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
+              <div className="form-group">
+                <label htmlFor="workout">Workout Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="workout"
+                  onChange={this.handleChange}
+                  value={name}
+                  className="form-control"
+                />
+              </div>
+              <button onClick={this.addExercise} className="btn btn-primary">
+                +
+              </button>
+              {exercise.map((val, idx) => {
+                let exerciseId = `exercise-${idx}`,
+                  setsId = `sets-${idx}`,
+                  repsId = `reps-${idx}`,
+                  weightsId = `weights-${idx}`;
+                return (
+                  <div key={idx} className="card">
+                    <div className="form-group">
+                      <label htmlFor={exerciseId}>{`Exercise #${idx +
+                        1}`}</label>
+                      <input
+                        type="text"
+                        name={exerciseId}
+                        data-id={idx}
+                        id={exerciseId}
+                        className="name"
+                        value={exercise[idx].name}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor={setsId}>Sets</label>
+                      <input
+                        type="text"
+                        name={setsId}
+                        data-id={idx}
+                        id={setsId}
+                        className="sets"
+                        value={exercise[idx].sets}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor={setsId}>Reps</label>
+                      <input
+                        type="text"
+                        name={repsId}
+                        data-id={idx}
+                        id={repsId}
+                        className="reps"
+                        value={exercise[idx].reps}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor={weightsId}>Weights</label>
+                      <input
+                        type="text"
+                        name={weightsId}
+                        data-id={idx}
+                        id={weightsId}
+                        className="weights"
+                        value={exercise[idx].weights}
+                      />
+                    </div>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor={setsId}>Sets</label>
-                    <input
-                      type="text"
-                      name={setsId}
-                      data-id={idx}
-                      id={setsId}
-                      className="sets"
-                      value={exercise[idx].sets}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor={setsId}>Reps</label>
-                    <input
-                      type="text"
-                      name={repsId}
-                      data-id={idx}
-                      id={repsId}
-                      className="reps"
-                      value={exercise[idx].reps}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor={weightsId}>Weights</label>
-                    <input
-                      type="text"
-                      name={weightsId}
-                      data-id={idx}
-                      id={weightsId}
-                      className="weights"
-                      value={exercise[idx].weights}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-            <button type="submit" className="btn btn-warning">
-              Submit
-            </button>
-          </form>
+                );
+              })}
+              <button type="submit" className="btn btn-warning">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
