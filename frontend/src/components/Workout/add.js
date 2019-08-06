@@ -2,7 +2,7 @@
 import { addWorkout } from "../../actions/workout";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Header from "../layout/header";
 
 class Add extends Component {
