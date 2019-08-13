@@ -186,8 +186,8 @@ export class List extends Component {
           </tbody>
             </table>*/}
           <this.showWorkout />
-          <Link to="/list">
-            <button className="btn btn-primary">+</button>
+          <Link to="/add">
+            <button className="btn btn-primary">Add Workout</button>
           </Link>
         </div>
       </Fragment>
