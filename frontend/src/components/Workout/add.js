@@ -141,6 +141,9 @@ class Add extends Component {
               <button type="submit" className="btn btn-warning">
                 Submit
               </button>
+              <button type="submit" className="btn btn-primary">
+                View Workouts
+              </button>
             </form>
           </div>
         </div>
