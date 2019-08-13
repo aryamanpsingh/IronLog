@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import React, { Component, Fragment } from "react";
 import Header from "../layout/header";
+import { Link } from 'react-router-dom'
 
 class Add extends Component {
   state = {
@@ -141,7 +142,8 @@ class Add extends Component {
               <button type="submit" className="btn btn-warning">
                 Submit
               </button>
-              <button type="submit" className="btn btn-primary">
+              <Link to="/list">
+              <button className="btn btn-primary"></Link>
                 View Workouts
               </button>
             </form>
