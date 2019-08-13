@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getWorkout } from "../../actions/workout";
 import Header from "../layout/header";
+import { Link } from "react-router-dom";
 export class List extends Component {
   state = {
     isSelected: false,
@@ -185,6 +186,9 @@ export class List extends Component {
           </tbody>
             </table>*/}
           <this.showWorkout />
+          <Link to="/list">
+            <button className="btn btn-primary">+</button>
+          </Link>
         </div>
       </Fragment>
     );
