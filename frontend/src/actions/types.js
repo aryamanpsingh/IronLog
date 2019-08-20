@@ -3,6 +3,10 @@ export const ADD_WORKOUT = "ADD_WORKOUT";
 export const EDIT_WORKOUT = "EDIT_WORKOUT";
 export const GET_WORKOUTS = "GET_WORKOUTS";
 
+//Routines
+export const ADD_ROUTINE = "ADD_ROUTINE";
+export const GET_ROUTINES = "GET_ROUTINES";
+
 //Users
 export const ADD_USER = "ADD_USER";
 export const GET_USERS = "GET_USERS";

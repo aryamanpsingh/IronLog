@@ -27,7 +27,7 @@ class Exercise(models.Model):
 class Workout(models.Model):
     name = models.CharField(max_length=100, unique=True)
     exercise = models.ManyToManyField('Exercise')
-    created_at = models.DateTimeField(default=datetime.date.today)
+    created_at = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(
         User, related_name="order", on_delete=models.CASCADE, null=True)
 
@@ -36,8 +36,6 @@ class Routine(models.Model):
     name = models.CharField(max_length=100)
     workout = models.ManyToManyField('Workout')
     length = models.IntegerField()
-
-    def clean(self):
-        if len(Routine.workout.all()) > length:
-            raise ValidationError(
-                _('Program complete - Cannot add more workouts.'))
+    created_at = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(
+        User, related_name="routine", on_delete=models.CASCADE, null=True)

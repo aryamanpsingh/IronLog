@@ -21,7 +21,7 @@ export class LoginForm extends Component {
     e.preventDefault();
     const { username, password } = this.state;
     const user = { username, password };
-    retValue = this.props.login(this.state.username, this.state.password);
+    this.props.login(this.state.username, this.state.password);
     this.setState({
       username: "",
       password: ""

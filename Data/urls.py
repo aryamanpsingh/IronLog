@@ -1,5 +1,5 @@
 from rest_framework import routers
-from .api import ExerciseViewSet, RoutineViewSet, WorkoutViewSet, CreateWorkoutAPI, UpdateWorkoutAPI
+from .api import ExerciseViewSet, RoutineViewSet, WorkoutViewSet, CreateWorkoutAPI, UpdateWorkoutAPI, CreateRoutineAPI
 from django.urls import include, path
 
 
@@ -10,6 +10,7 @@ router.register('api/list', WorkoutViewSet, 'workout')
 urlpatterns = router.urls
 
 urlpatterns += [
-    path('api/workout/create/', CreateWorkoutAPI.as_view(), name='create'),
-    path('api/workout/update/', UpdateWorkoutAPI.as_view(), name='update')
+    path('api/create/workout/', CreateWorkoutAPI.as_view(), name='create-workout'),
+    path('api/update/workout/', UpdateWorkoutAPI.as_view(), name='update-workout'),
+    path('api/create/routine/', CreateRoutineAPI.as_view(), name='create-routine'),
 ]

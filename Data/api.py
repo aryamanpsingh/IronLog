@@ -1,5 +1,5 @@
 from rest_framework import viewsets, permissions, generics
-from .serializers import ExerciseSerializer, RoutineSerializer, CreateWorkoutSerializer, UpdateWorkoutSerializer
+from .serializers import ExerciseSerializer, RoutineSerializer, CreateWorkoutSerializer, UpdateWorkoutSerializer, CreateRoutineSerializer
 from .models import Exercise, Routine, Workout
 
 
@@ -31,3 +31,9 @@ class UpdateWorkoutAPI (generics.UpdateAPIView):
 
     def get_object(self):
         return Workout.objects.get(name=self.request.data['name'])
+
+
+class CreateRoutineAPI (generics.CreateAPIView):
+    serializer_class = CreateRoutineSerializer
+    queryset = Routine.objects.all()
+    permission_classes = [permissions.AllowAny]

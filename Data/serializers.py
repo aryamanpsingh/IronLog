@@ -54,7 +54,7 @@ class UpdateWorkoutSerializer(serializers.ModelSerializer):
         return data
 
     def update(self, instance, validated_data):
-        exercises_data = validated_data.pop('exercise')
+        exercise = validated_data.pop('exercise')
         instance = super().update(instance, validated_data)
         for exercise_data in exercises_data:
             instance.exercise.add(Exercise.objects.create(
@@ -63,8 +63,38 @@ class UpdateWorkoutSerializer(serializers.ModelSerializer):
 
 
 class RoutineSerializer(serializers.ModelSerializer):
+    permission_classes = [
+        permissions.IsAuthenticated,
+    ]
     workout = WorkoutSerializer(many=True)
 
     class Meta:
         model = Routine
         fields = '__all__'
+
+
+class CreateRoutineSerializer(serializers.ModelSerializer):
+    permission_classes = [
+        permissions.IsAuthenticated,
+    ]
+    workout = WorkoutSerializer(many=True)
+
+    class Meta:
+        model = Routine
+        fields = '__all__'
+
+    def create(self, validated_data):
+        workouts_data = validated_data.pop('workout')
+
+        print("workouts_data")
+        print("exercises_data")
+        routine = Routine.objects.create(**validated_data)
+        for workout_data in workouts_data:
+            exercises_data = workout_data.pop('exercise')
+            new_workouts = Workout.objects.create(
+                routine=routine, **workout_data)
+            routine.workout.add(new_workouts)
+            for exercise_data in exercises_data:
+                new_workouts.exercise.add(Exercise.objects.create(
+                    workout=routine.workout, **exercise_data))
+        return routine

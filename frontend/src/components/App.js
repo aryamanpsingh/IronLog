@@ -12,15 +12,21 @@ import {
 } from "react-router-dom";
 import Index from "./index";
 import Add from "./Workout/add";
-import List from "./Workout/list";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import RoutineForm from "./Routine/RoutineForm";
+import List from "./Routine/List";
 import { loadUser } from "../actions/users";
+import $ from "jquery";
 
 class App extends Component {
   componentDidMount() {
     store.dispatch(loadUser());
     console.log("disp");
+    window.$('[data-toggle="tooltip"]').tooltip();
+  }
+  componentDidUpdate() {
+    $('[data-toggle="tooltip"]').tooltip();
   }
   render() {
     return (
@@ -28,8 +34,8 @@ class App extends Component {
         <Router>
           <Switch>
             <PrivateRoute exact path="/" component={Index} />
-            <Route exact path="/list" component={List} />
-            <Route exact path="/add" component={Add} />
+            <PrivateRoute exact path="/list" component={List} />
+            <PrivateRoute exact path="/add" component={RoutineForm} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
           </Switch>

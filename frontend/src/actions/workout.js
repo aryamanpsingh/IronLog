@@ -6,7 +6,7 @@ import { GET_WORKOUTS } from "./types";
 export const addWorkout = workout => dispatch => {
   // Headers
   axios
-    .post("/api/workout/create/", workout)
+    .post("/api/create/workout/", workout)
     .then(res => {
       dispatch({
         type: ADD_WORKOUT,
