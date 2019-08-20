@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0fiji8h64d1=o^%eus+a&x#bp)5vw!-c12)=-o#yy2nxx!!ug_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['104.248.64.9', '127.0.0.1']
 
@@ -77,28 +77,28 @@ WSGI_APPLICATION = 'IronLog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'jbnpyqkj',
-            'USER': 'jbnpyqkj',
-            'PASSWORD': 'yS1DKBlw8YLQ-Z6mdSEYR5jHKCplIfpq',
-            'HOST': 'raja.db.elephantsql.com',
-            'PORT': '5432'
-        }
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'jbnpyqkj',
+        'USER': 'jbnpyqkj',
+        'PASSWORD': 'yS1DKBlw8YLQ-Z6mdSEYR5jHKCplIfpq',
+        'HOST': 'raja.db.elephantsql.com',
+        'PORT': '5432'
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'ironlogdb',
-            'USER': 'arya',
-            'PASSWORD': 'postgresiron',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
+}
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ironlogdb',
+        'USER': 'arya',
+        'PASSWORD': 'postgresiron',
+        'HOST': 'localhost',
+        'PORT': '',
     }
+}
 
 
 # Password validation
