@@ -21,13 +21,14 @@ class Exercise(models.Model):
         if len(self.weights) > self.sets:
             raise ValidationError(
                 _('Draft entries may not have a publication date.'))
+                auto_now_add=True, blank=True
 '''
 
 
 class Workout(models.Model):
     name = models.CharField(max_length=100, unique=True)
     exercise = models.ManyToManyField('Exercise')
-    created_at = models.DateTimeField(auto_now_add=True, blank=True)
+    created_at = models.DateTimeField(default=datetime.datetime.now())
     owner = models.ForeignKey(
         User, related_name="order", on_delete=models.CASCADE, null=True)
 
