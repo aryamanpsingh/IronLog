@@ -39,6 +39,6 @@ class Routine(models.Model):
     workout = models.ManyToManyField('Workout')
     length = models.IntegerField()
     created_at = models.DateTimeField(
-        default=datetime.datetime.now(tz=timezone.utc))
+        default=timezone.now)
     owner = models.ForeignKey(
         User, related_name="routine", on_delete=models.CASCADE, null=True)
