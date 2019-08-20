@@ -15,6 +15,7 @@ import PropTypes from "prop-types";
 import { Provider } from "react-redux";
 import store from "../../store";
 import ReactTooltip from "react-tooltip";
+import { Redirect, Link } from "react-router-dom";
 
 export class RoutineForm extends Component {
   static propTypes = {
@@ -119,6 +120,7 @@ export class RoutineForm extends Component {
     const submission = { name, workout, length };
     console.log(submission);
     this.props.addRoutine(submission);
+    <Redirect to="/list" />;
     /*
     this.props.addWorkout(submission);
     this.setState({
