@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.postgres.fields import ArrayField
 import datetime
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 # Create your models here.
@@ -38,6 +39,6 @@ class Routine(models.Model):
     workout = models.ManyToManyField('Workout')
     length = models.IntegerField()
     created_at = models.DateTimeField(
-        default=datetime.datetime.now, blank=True)
+        default=timezone.now, blank=True)
     owner = models.ForeignKey(
         User, related_name="routine", on_delete=models.CASCADE, null=True)
