@@ -70,7 +70,7 @@ class RoutineSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Routine
-        fields = '__all__'
+        fields = ['name', 'workout', 'length']
 
 
 class CreateRoutineSerializer(serializers.ModelSerializer):
