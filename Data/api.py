@@ -1,6 +1,7 @@
 from rest_framework import viewsets, permissions, generics
 from .serializers import ExerciseSerializer, RoutineSerializer, CreateWorkoutSerializer, UpdateWorkoutSerializer, CreateRoutineSerializer
 from .models import Exercise, Routine, Workout
+from rest_framework.response import Response
 
 
 class ExerciseViewSet (viewsets.ModelViewSet):
