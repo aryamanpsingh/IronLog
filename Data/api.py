@@ -10,7 +10,9 @@ class ExerciseViewSet (viewsets.ModelViewSet):
 
 class RoutineViewSet (viewsets.ModelViewSet):
     serializer_class = RoutineSerializer
-    queryset = Routine.objects.all()
+
+    def get_queryset(self):
+        return self.request.user.routine.all()
 
 
 class WorkoutViewSet (viewsets.ModelViewSet):
