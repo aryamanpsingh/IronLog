@@ -27,8 +27,23 @@ export class RoutineForm extends Component {
     length: "",
     workout: [
       { name: "", exercise: [{ name: "", sets: "", reps: "", weights: "" }] }
-    ]
+    ],
+    submitted: false
   };
+  initialState = {
+    step: 1,
+    name: "",
+    length: "",
+    workout: [
+      { name: "", exercise: [{ name: "", sets: "", reps: "", weights: "" }] }
+    ],
+    submitted: false
+  };
+  componentDidMount() {
+    if (submitted) {
+    }
+    this.setState(this.initialState);
+  }
   addWorkout = e => {
     e.preventDefault();
     this.setState(prevState => ({
@@ -120,7 +135,9 @@ export class RoutineForm extends Component {
     const submission = { name, workout, length };
     console.log(submission);
     this.props.addRoutine(submission);
-    <Redirect to="/list" />;
+    this.setState({
+      submitted: true
+    });
     /*
     this.props.addWorkout(submission);
     this.setState({

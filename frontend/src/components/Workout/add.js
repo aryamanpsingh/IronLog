@@ -64,6 +64,7 @@ class Add extends Component {
 
   render() {
     let { name, exercise } = this.state;
+
     return (
       <Fragment>
         <Header />
