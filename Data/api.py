@@ -1,7 +1,8 @@
-from rest_framework import viewsets, permissions, generics
+from rest_framework import viewsets, permissions, generics, status
 from .serializers import ExerciseSerializer, RoutineSerializer, CreateWorkoutSerializer, UpdateWorkoutSerializer, CreateRoutineSerializer
 from .models import Exercise, Routine, Workout
 from rest_framework.response import Response
+from django.http import Http404
 
 
 class ExerciseViewSet (viewsets.ModelViewSet):
