@@ -15,7 +15,7 @@ class RoutineViewSet (viewsets.ModelViewSet):
         return self.request.user.routine.all()
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.owner)
+        serializer.save(owner=self.request.user)
 
 
 class WorkoutViewSet (viewsets.ModelViewSet):
