@@ -40,7 +40,7 @@ export class RoutineForm extends Component {
     submitted: false
   };
   componentDidMount() {
-    if (submitted) {
+    if (this.state.submitted) {
     }
     this.setState(this.initialState);
   }
