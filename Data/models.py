@@ -42,3 +42,7 @@ class Routine(models.Model):
         default=timezone.now)
     owner = models.ForeignKey(
         User, related_name="routine", on_delete=models.CASCADE, null=True)
+
+    def save_model(self, request, obj, form, change):
+        obj.added_by = request.user
+        super().save_model(request, obj, form, change)

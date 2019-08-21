@@ -88,7 +88,6 @@ class CreateRoutineSerializer(serializers.ModelSerializer):
         print("workouts_data")
         print("exercises_data")
         routine = Routine.objects.create(**validated_data)
-        routine.save(owner=self.request.user)
         for workout_data in workouts_data:
             exercises_data = workout_data.pop('exercise')
             new_workouts = Workout.objects.create(
