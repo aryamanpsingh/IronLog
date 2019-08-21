@@ -135,9 +135,7 @@ export class RoutineForm extends Component {
     const submission = { name, workout, length };
     console.log(submission);
     this.props.addRoutine(submission);
-    this.setState({
-      submitted: true
-    });
+    this.setState(this.initialState);
     /*
     this.props.addWorkout(submission);
     this.setState({
@@ -188,7 +186,6 @@ export class RoutineForm extends Component {
     const { step } = this.state;
     const { name, length, workout } = this.state;
     const values = { step, name, length, workout };
-
     if (step == 1) {
       return (
         <Provider store={store}>
