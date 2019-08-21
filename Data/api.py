@@ -44,6 +44,6 @@ class CreateRoutineAPI (generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
 
     def post(self, request, format=None):
-        serializer = CreateRoutineSerializer(owner=self.request.user)
+        serializer = CreateRoutineSerializer()
         if serializer.is_valid():
-            serializer.save()
+            serializer.save(owner=self.request.user)
