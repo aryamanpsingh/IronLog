@@ -14,9 +14,6 @@ class RoutineViewSet (viewsets.ModelViewSet):
     def get_queryset(self):
         return self.request.user.routine.all()
 
-    def create(self, serializer):
-        serializer.save(owner=self.request.user)
-
 
 class WorkoutViewSet (viewsets.ModelViewSet):
     serializer_class = CreateWorkoutSerializer
