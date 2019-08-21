@@ -12,7 +12,7 @@ class RoutineViewSet (viewsets.ModelViewSet):
     serializer_class = RoutineSerializer
 
     def get_queryset(self):
-        return self.request.user.routine.all()
+        return self.request.user.Data.all()
 
 
 class WorkoutViewSet (viewsets.ModelViewSet):
