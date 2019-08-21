@@ -9,6 +9,9 @@ class ExerciseViewSet (viewsets.ModelViewSet):
 
 
 class RoutineViewSet (viewsets.ModelViewSet):
+    permission_classes = [
+        permissions.IsAuthenticated,
+    ]
     serializer_class = RoutineSerializer
 
     def get_queryset(self):
