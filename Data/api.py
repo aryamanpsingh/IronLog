@@ -42,3 +42,6 @@ class CreateRoutineAPI (generics.CreateAPIView):
     serializer_class = CreateRoutineSerializer
     queryset = Routine.objects.all()
     permission_classes = [permissions.AllowAny]
+
+    def create(self, serializer):
+        serializer.save(owner=self.request.user)
