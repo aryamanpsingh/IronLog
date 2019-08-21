@@ -41,8 +41,8 @@ export class RoutineForm extends Component {
   };
   componentDidMount() {
     if (this.state.submitted) {
+      this.setState(this.initialState);
     }
-    this.setState(this.initialState);
   }
   addWorkout = e => {
     e.preventDefault();
