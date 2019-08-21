@@ -14,6 +14,9 @@ class RoutineViewSet (viewsets.ModelViewSet):
     def get_queryset(self):
         return self.request.user.routine.all()
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.owner)
+
 
 class WorkoutViewSet (viewsets.ModelViewSet):
     serializer_class = CreateWorkoutSerializer
@@ -39,3 +42,6 @@ class CreateRoutineAPI (generics.CreateAPIView):
     serializer_class = CreateRoutineSerializer
     queryset = Routine.objects.all()
     permission_classes = [permissions.AllowAny]
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.owner)
