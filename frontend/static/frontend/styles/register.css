@@ -1,0 +1,20 @@
+.center-container {
+  justify-content: center;
+  margin: auto;
+  padding-top: 10%;
+  padding-bottom: 5%;
+  width: 30%;
+}
+
+.register-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 0 5% 0;
+}
+@media (pointer: coarse) and (hover: none) {
+  .center-container {
+    margin: 20% auto;
+    width: 90%;
+  }
+}

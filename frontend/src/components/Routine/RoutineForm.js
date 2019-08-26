@@ -3,11 +3,6 @@ import WorkoutForm from "./WorkoutForm";
 import Confirm from "./Confirm";
 import Success from "./Success";
 import Header from "../layout/header";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import TextField from "material-ui/TextField";
-import RaisedButton from "material-ui/RaisedButton";
-import Container from "@material-ui/core/Container";
 import update from "immutability-helper";
 import { addRoutine } from "../../actions/routine";
 import { connect } from "react-redux";
@@ -16,6 +11,7 @@ import { Provider } from "react-redux";
 import store from "../../store";
 import ReactTooltip from "react-tooltip";
 import { Redirect, Link } from "react-router-dom";
+import Footer from "../layout/footer";
 
 export class RoutineForm extends Component {
   static propTypes = {
@@ -190,49 +186,54 @@ export class RoutineForm extends Component {
       return (
         <Provider store={store}>
           <React.Fragment>
-            <ReactTooltip />
-            <Header />
-            <div className="routine-form">
-              <div className="form-title">Add a routine</div>
-              <form id="routine">
-                <div className="form-group" title="test">
-                  <label htmlFor="name" className="form-label">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    onChange={this.handleChange("name")}
-                    defaultValue={values.name}
-                  />
-                </div>
-                <div className="row">
-                  <div className="col">
-                    <div className="form-group">
-                      <label htmlFor="length" className="form-label">
-                        Length
+            <header>
+              <ReactTooltip />
+              <Header />
+              <div className="header-container">
+                <div className="routine-form rounded">
+                  <div className="form-title">Add a routine</div>
+                  <form id="routine">
+                    <div className="form-group" title="test">
+                      <label htmlFor="name" className="form-label">
+                        Name
                       </label>
                       <input
-                        type="number"
+                        type="text"
                         className="form-control"
-                        id="length"
-                        onChange={this.handleChange("length")}
-                        defaultValue={values.length}
-                        data-place="bottom"
-                        data-tip="# of days in the routine"
-                        data-event="focus"
+                        id="name"
+                        onChange={this.handleChange("name")}
+                        defaultValue={values.name}
                       />
                     </div>
-                  </div>
-                  <div className="col">
-                    <button className="btn-large" onClick={this.continue}>
-                      Continue
-                    </button>
-                  </div>
+                    <div className="row">
+                      <div className="col">
+                        <div className="form-group">
+                          <label htmlFor="length" className="form-label">
+                            Length
+                          </label>
+                          <input
+                            type="number"
+                            className="form-control"
+                            id="length"
+                            onChange={this.handleChange("length")}
+                            defaultValue={values.length}
+                            data-place="bottom"
+                            data-tip="# of days in the routine"
+                            data-event="focus"
+                          />
+                        </div>
+                      </div>
+                      <div className="col">
+                        <button className="btn-large" onClick={this.continue}>
+                          Continue
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-              </form>
-            </div>
+              </div>
+            </header>
+            <Footer />
           </React.Fragment>
         </Provider>
       );

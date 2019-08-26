@@ -1,33 +1,38 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import Header from "../layout/header";
+import Footer from "../layout/footer";
 import { Provider } from "react-redux";
 import store from "../../store";
 import { Link } from "react-router-dom";
 export default function Index() {
   return (
     <Provider store={store}>
-      <Fragment>
-        <Header />
-      </Fragment>
       <header>
-        <div className="overlay" />
-        <picture>
-          <source srcSet="/static/frontend/images/back.png" type="image/png" />
-          <img src="/static/frontend/images/back.png" />
-        </picture>
-        <div className="container h-100">
-          <div className="d-flex h-100 text-center align-items-center">
-            <div className="w-100 text-white">
-              <h1 className="display-3">IronLog</h1>
-              <p className="lead mb-0">
-                <Link to="/list">
-                  <button className="btn btn-dark btn-large">View</button>
-                </Link>
-                <Link to="/add">
-                  <button className="btn btn-dark btn-large">Create</button>
-                </Link>
-              </p>
+        <Fragment>
+          <Header />
+        </Fragment>
+        <div className="header-container">
+          <div className="menu-container rounded">
+            <div className="view">
+              <Link to="/add">
+                <div className="button">
+                  <img
+                    src="static/frontend/images/noteicon.png"
+                    className="menu-icon"
+                  />
+                </div>
+              </Link>
+            </div>
+            <div className="create">
+              <Link to="/list">
+                <div className="button">
+                  <img
+                    src="static/frontend/images/viewicon.png"
+                    className="menu-icon"
+                  />
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -62,6 +67,7 @@ export default function Index() {
           <h1>Add Workouts</h1>
         </Link>
   </div>*/}
+      <Footer />
     </Provider>
   );
 }

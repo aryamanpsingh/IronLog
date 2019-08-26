@@ -1,10 +1,15 @@
 header {
   position: relative;
   background-color: black;
-  height: 75vh;
-  min-height: 25rem;
+  height: 100vh;
+  min-height: 33rem;
   width: 100%;
   overflow: hidden;
+  background: url("../images/login-back.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 header picture {
@@ -26,7 +31,17 @@ header .container {
   position: relative;
   z-index: 2;
 }
-
+.nav-container {
+  background: rgba(20, 14, 3, 0.9);
+  color: white;
+}
+.nav-link {
+  width: 100px;
+  height: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  background: rgba(167, 135, 99, 0.644);
+}
 header .overlay {
   position: absolute;
   top: 0;
@@ -43,10 +58,6 @@ header .display-3 {
 }
 
 @media (pointer: coarse) and (hover: none) {
-  header {
-    background: url("https://source.unsplash.com/XT5OInaElMw/1600x900") black
-      no-repeat center center scroll;
-  }
   header picture {
     display: none;
   }
@@ -56,4 +67,37 @@ header .display-3 {
 }
 .navbar .navbar-brand img {
   height: 75px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 100%;
+}
+.navbar-toggler {
+  color: #00273d;
+}
+.navbar-toggle {
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 23px;
+  padding: 9px 10px !important;
+  color: #00273d;
+}
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    padding-top: 26.5px;
+    padding-bottom: 26.5px;
+    line-height: 27px;
+  }
+}
+.nav-item {
+  text-align: right;
+  margin-left: auto;
+  padding: 1em;
+}
+#nav-toggle-button {
+  color: white;
 }

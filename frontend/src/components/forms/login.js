@@ -34,13 +34,9 @@ export class LoginForm extends Component {
     }
     const { username, password } = this.state;
     return (
-      <div className="col-md-6 m-auto">
-        <div className="card card-body mt-5">
-          <img
-            src="/static/frontend/images/logo.png"
-            className="img-thumbnail rounded mx-auto d-block"
-          />
-          <h2 className="text-center">Login</h2>
+      <div className="card">
+        <div className="card-body mt-2">
+          <h3 className="login-title">Login</h3>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label>Username</label>
@@ -64,8 +60,8 @@ export class LoginForm extends Component {
               />
             </div>
 
-            <div className="form-group">
-              <button type="submit" className="btn btn-primary">
+            <div className="form-group text-center">
+              <button type="submit" className="login">
                 Login
               </button>
             </div>

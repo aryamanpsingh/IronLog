@@ -168,7 +168,7 @@ export class List extends Component {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Date created</th>
+              <th>Days</th>
               <th />
             </tr>
           </thead>
@@ -188,9 +188,9 @@ export class List extends Component {
                   key={routine.created_at}
                   name={routine.created_at}
                   className="date-created"
-                  value={routine.created_at}
+                  value={routine.length}
                 >
-                  <h4>{routine.created_at}</h4>
+                  <h4>{routine.length}</h4>
                 </td>
               </tr>
             ))}
@@ -219,7 +219,7 @@ export class List extends Component {
     return (
       <Fragment>
         <Header />
-        <div className="container">
+        <div className="list-container">
           {this.state.isSelected == false && <this.showList />}
           {/*}
         <h2>Workouts: </h2>

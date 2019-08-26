@@ -1,21 +1,24 @@
 body {
   font-family: "Montserrat", sans-serif;
+  background: #333;
 }
 .routine-form {
-  padding: 4em 2em;
+  background: #eeeeee;
+  padding: 3em 2em;
   max-width: 400px;
-  margin: 3em auto;
+  margin: 10% auto;
   border-style: solid;
   border-color: #333;
   border-width: 2px;
 }
 .workout-form {
-  padding: 4em 2em;
-  max-width: 600px;
-  margin: 3em auto;
+  background: #eeeeee;
+  padding: 3em 2em;
+  margin: 10% auto;
   border-style: solid;
   border-color: #333;
   border-width: 2px;
+  width: 40%;
 }
 .form-title {
   text-align: center;
@@ -83,4 +86,78 @@ body {
 .workout-name {
   margin: auto;
   text-align: center;
+}
+footer {
+  color: #eeeeee;
+  background: rgb(22, 17, 17);
+}
+
+.footer-contents {
+  padding: 50px;
+  text-align: center;
+}
+
+.register,
+.login {
+  background: #333;
+  color: white;
+  width: 10em;
+}
+
+.create {
+  width: 150px;
+  height: 150px;
+  background: #eeeeee;
+  margin: 50px;
+  border-radius: 50px;
+  opacity: 0.6;
+}
+.view {
+  width: 150px;
+  height: 150px;
+  background: #eeeeee;
+  margin: 50px;
+  border-radius: 50px;
+  opacity: 0.6;
+}
+.menu-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 10%;
+  justify-content: space-between;
+}
+.menu-icon {
+  max-height: 100px;
+  margin: 25px;
+}
+
+.workoutform-container {
+  position: relative;
+  background-color: black;
+  min-height: 33rem;
+  width: 100%;
+  overflow: hidden;
+  background: url("../images/login-back.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-repeat: repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+@media screen and (max-width: 700px) {
+  .menu-container {
+    display: inline-block;
+  }
+  .list-container {
+    margin: 5em auto;
+  }
+  .workout-form {
+    margin: 25% auto;
+    width: 90%;
+  }
+}
+.list-container {
+  padding: 10%;
 }

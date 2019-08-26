@@ -41,13 +41,9 @@ export class RegisterUser extends Component {
     }
     const { username, email, password } = this.state;
     return (
-      <div className="col-md-6 m-auto">
-        <div className="card card-body mt-4 mb-4">
-          <img
-            src="/static/frontend/images/logo.png"
-            className="img-thumbnail rounded mx-auto d-block"
-          />
-          <h2 className="text-center">Add User</h2>
+      <div className="card">
+        <div className="card-body mt-2">
+          <h3 className="register-title">Register</h3>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label>Username</label>
@@ -79,9 +75,9 @@ export class RegisterUser extends Component {
                 value={password}
               />
             </div>
-            <div className="form-group">
-              <button type="submit" className="btn btn-primary">
-                Submit
+            <div className="form-group text-center">
+              <button type="submit" className="register mt-6">
+                Register
               </button>
             </div>
           </form>

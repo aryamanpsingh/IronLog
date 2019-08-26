@@ -9,9 +9,18 @@ export default function Register() {
   return (
     <Provider store={store}>
       <Fragment>
-        <div className="container">
-          <RegisterUser />
-        </div>
+        <header>
+          <div className="main-container">
+            <div className="center-container">
+              <div className="register-form">
+                <div className="logo">
+                  <img src="/static/frontend/images/logo.png" alt="logo" />
+                </div>
+                <RegisterUser />
+              </div>
+            </div>
+          </div>
+        </header>
       </Fragment>
     </Provider>
   );

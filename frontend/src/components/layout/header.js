@@ -14,16 +14,13 @@ export class Header extends Component {
     const { isAuthenticated, user } = this.props.user;
 
     const authLinks = (
-      <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-        <span className="navbar-text mr-3">
-          <strong>{user ? `Welcome ${user.username}` : ""}</strong>
-        </span>
+      <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <button
-            onClick={this.props.logout}
-            className="nav-link btn btn-info btn-sm text-light"
-          >
-            Logout
+          <strong>{user ? `Hey ${user.username}` : ""}</strong>
+        </li>
+        <li className="nav-item">
+          <button onClick={this.props.logout} className="nav-link">
+            <strong>logout</strong>
           </button>
         </li>
       </ul>
@@ -45,27 +42,28 @@ export class Header extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
-        <div className="container">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a className="navbar-brand" href="#">
+      <div className="nav-container">
+        <nav className="navbar navbar-expand-sm fixed-top">
+          <div className="container">
+            <a className="navbar-brand mx-4" href="#">
               <img src="/static/frontend/images/logo.png" alt="logo" />
             </a>
+
+            <button
+              className="navbar-toggler"
+              data-toggle="collapse"
+              data-target="#navbarCollapse"
+            >
+              <span className="navbar-toggler-icon" id="nav-toggle-button">
+                =
+              </span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarCollapse">
+              {isAuthenticated ? authLinks : guestLinks}
+            </div>
           </div>
-          {isAuthenticated ? authLinks : guestLinks}
-        </div>
-      </nav>
+        </nav>
+      </div>
     );
   }
 }

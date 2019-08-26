@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="left-container"></div>
+      <div class="right-container">
+        <div className="col-md-6 m-auto">
+            <div className="card card-body mt-5">
+              <img
+                src="/static/frontend/images/logo.png"
+                className="img-thumbnail rounded mx-auto d-block"
+              />
+              <h2 className="text-center">Login</h2>
+              <form onSubmit={this.onSubmit}>
+                <div className="form-group">
+                  <label>Username</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="username"
+                    onChange={this.onChange}
+                    value={username}
+                  />
+                </div>
+    
+                <div className="form-group">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    name="password"
+                    onChange={this.onChange}
+                    value={password}
+                  />
+                </div>
+    
+                <div className="form-group">
+                  <button type="submit" className="btn btn-primary">
+                    Login
+                  </button>
+                </div>
+                <p>
+                  Don't have an account? <Link to="/register">Register</Link>
+                </p>
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
