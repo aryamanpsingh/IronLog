@@ -25,7 +25,7 @@ SECRET_KEY = '0fiji8h64d1=o^%eus+a&x#bp)5vw!-c12)=-o#yy2nxx!!ug_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['104.248.64.9', 'localhost']
+ALLOWED_HOSTS = ['104.248.64.9']
 
 
 # Application definition
@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'IronLog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -99,7 +100,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-'''
 
 
 # Password validation
