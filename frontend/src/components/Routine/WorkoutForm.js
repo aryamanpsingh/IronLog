@@ -79,7 +79,7 @@ export class WorkoutForm extends Component {
                         />
                       </div>
                       <div className="form-group">
-                        <label htmlFor={setsId}>Reps</label>
+                        <label htmlFor={setsId}>Reps (eg. 8,12)</label>
                         <input
                           type="text"
                           name="reps"
@@ -94,7 +94,7 @@ export class WorkoutForm extends Component {
                         />
                       </div>
                       <div className="form-group">
-                        <label htmlFor={weightsId}>Weights</label>
+                        <label htmlFor={weightsId}>Weights (eg. 135,225)</label>
                         <input
                           type="text"
                           name="weights"
