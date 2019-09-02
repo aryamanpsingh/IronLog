@@ -125,7 +125,7 @@ export class RoutineForm extends Component {
         };
       });
       exercise = array_exercise;
-      array_workout[index].exercise = exercise;
+      if (exercise != null) array_workout[index].exercise = exercise;
     });
     workout = array_workout;
     const submission = { name, workout, length };
