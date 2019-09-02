@@ -93,12 +93,9 @@ header .display-3 {
     line-height: 27px;
   }
   header {
-    position: relative;
-    background-color: black;
     height: 600px;
-    min-height: 33rem;
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
   }
 }
 .nav-item {
