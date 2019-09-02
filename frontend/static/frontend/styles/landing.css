@@ -92,6 +92,13 @@ header .display-3 {
     padding-bottom: 26.5px;
     line-height: 27px;
   }
+  header {
+    position: relative;
+    background-color: black;
+    height: 100%;
+    min-height: 33rem;
+    width: 100%;
+  }
 }
 .nav-item {
   text-align: right;
