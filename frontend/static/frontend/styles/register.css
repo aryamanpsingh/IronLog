@@ -14,7 +14,7 @@
 }
 @media (pointer: coarse) and (hover: none) {
   .center-container {
-    margin: 20% auto;
+    margin: auto;
     width: 90%;
   }
 }
