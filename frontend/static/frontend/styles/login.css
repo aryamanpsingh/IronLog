@@ -32,6 +32,7 @@
     display: block;
   }
   .right-container {
+    display: inline-block;
     margin: auto;
     padding: 5% 5%;
   }
