@@ -94,7 +94,7 @@ header .display-3 {
   }
   header {
     width: 100%;
-    overflow: auto;
+    overflow-y: auto;
   }
 }
 .nav-item {
